@@ -1,0 +1,30 @@
+name: Setup Exoscale
+author: nhedger
+description: Setup Exoscale CLI in GitHub Actions
+branding:
+  color: white
+  icon: terminal
+inputs:
+  version:
+    description: The version of the Exoscale CLI to install
+    required: true
+    default: latest
+  authenticate:
+    description: Authenticate the Exoscale CLI
+    required: false
+  account:
+    description: The Exoscale account name
+    required: false
+  zone:
+    description: The Exoscale default zone
+    required: true
+    default: ch-gva-2
+  key:
+    description: The Exoscale API key
+    required: false
+  secret:
+    description: The Exoscale API secret
+    required: false
+runs:
+  using: 'node16'
+  main: 'dist/index.mjs'
