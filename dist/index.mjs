@@ -13349,6 +13349,8 @@ const findAsset = async (releaseId, options) => {
 };
 const install = async (executablePath, options) => {
   await (0,promises_namespaceObject.symlink)(executablePath, (0,external_path_.join)((0,external_path_.dirname)(executablePath), "sops"));
+  await (0,promises_namespaceObject.chmod)(executablePath, 493);
+  await (0,promises_namespaceObject.chmod)((0,external_path_.join)((0,external_path_.dirname)(executablePath), "sops"), 493);
   (0,core.addPath)((0,external_path_.dirname)(executablePath));
 };
 
