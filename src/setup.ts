@@ -149,6 +149,7 @@ const install = async (executablePath: string, options: SetupOptions) => {
 
     // Make binary executable
     await chmod(executablePath, 0o755);
+    await chmod(join(dirname(executablePath), 'sops'), 0o755);
 
     // Add the CLI binary to the PATH
     addPath(dirname(executablePath));
