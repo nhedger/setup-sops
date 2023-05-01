@@ -1,6 +1,6 @@
 import { join, dirname, basename } from 'path';
 import { Octokit } from '@octokit/rest';
-import {rename, symlink, writeFile} from 'fs/promises';
+import {chmod, rename, symlink, writeFile} from 'fs/promises';
 import { RequestError } from '@octokit/request-error';
 import { addPath, exportVariable, setFailed } from '@actions/core';
 import { downloadTool, extractTar, extractZip } from '@actions/tool-cache';
@@ -146,6 +146,9 @@ const install = async (executablePath: string, options: SetupOptions) => {
 
     // Symlink the binary to sops
     await symlink(executablePath, join(dirname(executablePath), 'sops'));
+
+    // Make binary executable
+    await chmod(executablePath, 0o755);
 
     // Add the CLI binary to the PATH
     addPath(dirname(executablePath));
