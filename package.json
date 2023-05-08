@@ -20,7 +20,7 @@
   "devDependencies": {
     "@hedger/prettier-config": "^1.2.0",
     "@octokit/types": "^9.2.0",
-    "@types/node": "^18.16.3",
+    "@types/node": "^20.1.0",
     "@vercel/ncc": "^0.36.1",
     "prettier": "^2.8.8",
     "unbuild": "^1.2.1"
