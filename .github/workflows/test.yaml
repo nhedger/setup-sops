@@ -22,7 +22,5 @@ jobs:
         uses: ./
         with:
           version: ${{ matrix.version }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Test SOPS
         run: sops --version
