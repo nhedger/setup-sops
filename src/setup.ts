@@ -1,9 +1,9 @@
 import { join, dirname, basename } from 'path';
 import { Octokit } from '@octokit/rest';
-import {chmod, rename, symlink, writeFile} from 'fs/promises';
+import { chmod, symlink } from 'fs/promises';
 import { RequestError } from '@octokit/request-error';
-import { addPath, exportVariable, setFailed } from '@actions/core';
-import { downloadTool, extractTar, extractZip } from '@actions/tool-cache';
+import { addPath, setFailed } from '@actions/core';
+import { downloadTool } from '@actions/tool-cache';
 
 /**
  * SOPS Setup Options
@@ -143,7 +143,6 @@ const findAsset = async (releaseId: number, options: SetupOptions) => {
  * Installs the downloaded SOPS binary
  */
 const install = async (executablePath: string, options: SetupOptions) => {
-
     // Symlink the binary to sops
     await symlink(executablePath, join(dirname(executablePath), 'sops'));
 
