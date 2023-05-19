@@ -23,6 +23,11 @@ The following inputs are supported.
     # This input is optional and defaults to "latest".
     # Example values: "3.7.3", "latest"
     version: "latest"
+
+    # The GitHub token to use to authenticate GitHub API requests.
+    # This input is optional and defaults to the job's GitHub token.
+    # Example value: ${{ secrets.GITHUB_TOKEN }}
+    token: ${{ github.token }}
 ```
 
 ## Examples

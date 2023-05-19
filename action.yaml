@@ -9,6 +9,10 @@ inputs:
     description: The version of SOPS to install
     required: true
     default: latest
+  token:
+    description: GitHub Actions token to authenticate API requests
+    required: true
+    default: ${{ github.token }}
 runs:
   using: 'node16'
   main: 'dist/index.mjs'
