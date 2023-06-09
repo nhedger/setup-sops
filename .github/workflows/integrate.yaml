@@ -18,16 +18,11 @@ jobs:
         with:
           node-version: 16.x
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          run_install: true
-
       - name: Build action
-        run: pnpm build
+        run: npm run build
 
       - name: Package action
-        run: pnpm package
+        run: npm run package
 
   coding-standards:
     runs-on: ubuntu-latest
@@ -40,10 +35,8 @@ jobs:
       with:
         node-version: 16.x
 
-    - name: Setup pnpm
-      uses: pnpm/action-setup@v2
-      with:
-        run_install: true
+    - name: Install dependencies
+      run: npm install
 
     - name: Run Rome
-      run: pnpm rome ci
+      run: npm run rome ci

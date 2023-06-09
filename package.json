@@ -8,9 +8,12 @@
     "format": "rome format --write .",
     "lint": "rome check --apply-unsafe ."
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["mozilla", "sops", "github-actions"],
+  "author": {
+	  	"name": "Nicolas Hedger",
+		"email": "nicolas@hedger.ch"
+  },
+  "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.10.0",
     "@actions/tool-cache": "^2.0.1",
@@ -26,6 +29,5 @@
     "@vercel/ncc": "^0.36.1",
     "rome": "^12.1.3",
     "unbuild": "^1.2.1"
-  },
-  "packageManager": "pnpm@8.3.1"
+  }
 }
