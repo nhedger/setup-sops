@@ -1,0 +1,14 @@
+{
+	"$schema": "./node_modules/rome/configuration_schema.json",
+	"files": {
+		"ignore": ["build", "dist", "node_modules"]
+	},
+    "formatter": {
+        "indentSize": 2,
+        "indentStyle": "tab",
+        "lineWidth": 120
+    },
+    "organizeImports": {
+        "enabled": true
+    }
+}
