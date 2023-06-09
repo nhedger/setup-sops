@@ -13284,7 +13284,7 @@ const download = async (options) => {
     const assetURL = await findAsset(releaseId, options);
     return await (0,tool_cache.downloadTool)(assetURL);
   } catch (error) {
-    if (typeof error === request_error_dist_node.RequestError) {
+    if (error instanceof request_error_dist_node.RequestError) {
       const requestError = error;
       if (requestError.status === 403 && requestError.response?.headers["x-ratelimit-remaining"] === "0") {
         throw new Error(`
@@ -13312,12 +13312,10 @@ const findRelease = async (options) => {
       tag: `v${options.version}`
     })).data.id;
   } catch (error) {
-    if (typeof error === request_error_dist_node.RequestError) {
+    if (error instanceof request_error_dist_node.RequestError) {
       const requestError = error;
       if (requestError.status === 404) {
-        throw new Error(
-          `Version ${options.version} of SOPS does not exist.`
-        );
+        throw new Error(`Version ${options.version} of SOPS does not exist.`);
       }
       throw error;
     }
@@ -13336,14 +13334,10 @@ const findAsset = async (releaseId, options) => {
     ["win32", ".exe"]
   ]);
   const asset = assets.data.find(
-    (asset2) => asset2.name.endsWith(
-      patterns.get(options.platform)
-    )
+    (asset2) => asset2.name.endsWith(patterns.get(options.platform))
   );
   if (!asset) {
-    throw new Error(
-      `Could not find a SOPS release for ${options.platform} for the given version.`
-    );
+    throw new Error(`Could not find a SOPS release for ${options.platform} for the given version.`);
   }
   return asset.browser_download_url;
 };
