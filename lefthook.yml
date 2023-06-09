@@ -1,0 +1,4 @@
+pre-commit:
+  commands:
+    package:
+      run: npm run package && git add dist/*
