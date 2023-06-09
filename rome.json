@@ -4,7 +4,7 @@
 		"ignore": ["build", "dist", "node_modules"]
 	},
 	"formatter": {
-		"indentSize": 2,
+		"indentSize": 4,
 		"indentStyle": "tab",
 		"lineWidth": 120
 	},

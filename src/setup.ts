@@ -41,10 +41,10 @@ export const setup = async (config: Partial<SetupOptions>) => {
 		// Install SOPS
 		await install(executablePath, options);
 	} catch (error: unknown) {
-        if(error instanceof Error) {
-            console.log(error.message);
-            setFailed(error.message);
-        }
+		if (error instanceof Error) {
+			console.log(error.message);
+			setFailed(error.message);
+		}
 	}
 };
 
