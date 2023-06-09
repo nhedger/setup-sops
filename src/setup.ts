@@ -1,155 +1,146 @@
-import { join, dirname } from 'path';
-import { Octokit } from '@octokit/rest';
-import { chmod, symlink } from 'fs/promises';
-import { RequestError } from '@octokit/request-error';
-import { addPath, setFailed } from '@actions/core';
-import { downloadTool } from '@actions/tool-cache';
+import { join, dirname } from "path";
+import { Octokit } from "@octokit/rest";
+import { chmod, symlink } from "fs/promises";
+import { RequestError } from "@octokit/request-error";
+import { addPath, setFailed } from "@actions/core";
+import { downloadTool } from "@actions/tool-cache";
 
 /**
  * SOPS Setup Options
  */
 export interface SetupOptions {
-    /**
-     * Version of SOPS to download
-     */
-    version: string;
+	/**
+	 * Version of SOPS to download
+	 */
+	version: string;
 
-    /**
-     * Operating system to download the CLI for
-     */
-    platform: 'linux' | 'darwin' | 'win32';
+	/**
+	 * Operating system to download the CLI for
+	 */
+	platform: "linux" | "darwin" | "win32";
 
-    /**
-     * Octokit instance to use for API calls
-     */
-    octokit: Octokit;
+	/**
+	 * Octokit instance to use for API calls
+	 */
+	octokit: Octokit;
 }
 
 const defaultOptions: SetupOptions = {
-    version: 'latest',
-    platform: process.platform as 'linux' | 'darwin' | 'win32',
-    octokit: new Octokit(),
+	version: "latest",
+	platform: process.platform as "linux" | "darwin" | "win32",
+	octokit: new Octokit(),
 };
 
 export const setup = async (config: Partial<SetupOptions>) => {
-    const options: SetupOptions = { ...defaultOptions, ...config };
+	const options: SetupOptions = { ...defaultOptions, ...config };
 
-    try {
-        // Download SOPS
-        const executablePath = await download(options);
+	try {
+		// Download SOPS
+		const executablePath = await download(options);
 
-        // Install SOPS
-        await install(executablePath, options);
-    } catch (error: any) {
-        console.log(error);
-        setFailed(error.message);
-    }
+		// Install SOPS
+		await install(executablePath, options);
+	} catch (error: any) {
+		console.log(error);
+		setFailed(error.message);
+	}
 };
 
 /**
  * Downloads SOPS
  */
 const download = async (options: SetupOptions): Promise<string> => {
-    try {
-        const releaseId = await findRelease(options);
-        const assetURL = await findAsset(releaseId, options);
-        return await downloadTool(assetURL);
-    } catch (error) {
-        if (typeof error === RequestError) {
-            const requestError = error as RequestError;
-            if (
-                requestError.status === 403 &&
-                requestError.response?.headers['x-ratelimit-remaining'] === '0'
-            ) {
-                throw new Error(`
+	try {
+		const releaseId = await findRelease(options);
+		const assetURL = await findAsset(releaseId, options);
+		return await downloadTool(assetURL);
+	} catch (error) {
+		if (typeof error === RequestError) {
+			const requestError = error as RequestError;
+			if (requestError.status === 403 && requestError.response?.headers["x-ratelimit-remaining"] === "0") {
+				throw new Error(`
                     You have exceeded the GitHub API rate limit.
-                    Please try again in ${requestError.response?.headers['x-ratelimit-reset']} seconds.
+                    Please try again in ${requestError.response?.headers["x-ratelimit-reset"]} seconds.
                     If you have not already done so, you can try authenticating calls to the GitHub API
                     by setting the \`GITHUB_TOKEN\` environment variable.
                 `);
-            }
-        }
-        throw error;
-    }
+			}
+		}
+		throw error;
+	}
 };
 
 /**
  * Finds the release for the given version
  */
 const findRelease = async (options: SetupOptions) => {
-    try {
-        if (options.version === 'latest') {
-            return (
-                await options.octokit.repos.getLatestRelease({
-                    owner: 'mozilla',
-                    repo: 'sops',
-                })
-            ).data.id;
-        }
+	try {
+		if (options.version === "latest") {
+			return (
+				await options.octokit.repos.getLatestRelease({
+					owner: "mozilla",
+					repo: "sops",
+				})
+			).data.id;
+		}
 
-        return (
-            await options.octokit.repos.getReleaseByTag({
-                owner: 'mozilla',
-                repo: 'sops',
-                tag: `v${options.version}`,
-            })
-        ).data.id;
-    } catch (error) {
-        if (typeof error === RequestError) {
-            const requestError = error as RequestError;
-            if (requestError.status === 404) {
-                throw new Error(
-                    `Version ${options.version} of SOPS does not exist.`
-                );
-            }
-            throw error;
-        }
-        throw error;
-    }
+		return (
+			await options.octokit.repos.getReleaseByTag({
+				owner: "mozilla",
+				repo: "sops",
+				tag: `v${options.version}`,
+			})
+		).data.id;
+	} catch (error) {
+		if (typeof error === RequestError) {
+			const requestError = error as RequestError;
+			if (requestError.status === 404) {
+				throw new Error(`Version ${options.version} of SOPS does not exist.`);
+			}
+			throw error;
+		}
+		throw error;
+	}
 };
 
 /**
  * Finds the asset for the given release ID and options
  */
 const findAsset = async (releaseId: number, options: SetupOptions) => {
-    const assets = await options.octokit.repos.listReleaseAssets({
-        owner: 'mozilla',
-        repo: 'sops',
-        release_id: releaseId,
-    });
+	const assets = await options.octokit.repos.listReleaseAssets({
+		owner: "mozilla",
+		repo: "sops",
+		release_id: releaseId,
+	});
 
-    const patterns: Map<string, string> = new Map([
-        ['linux', '.linux'],
-        ['darwin', '.darwin'],
-        ['win32', '.exe'],
-    ]);
+	const patterns: Map<string, string> = new Map([
+		["linux", ".linux"],
+		["darwin", ".darwin"],
+		["win32", ".exe"],
+	]);
 
-    const asset = assets.data.find((asset) =>
-        asset.name.endsWith(
-            patterns.get(options.platform) as SetupOptions['platform']
-        )
-    );
+	const asset = assets.data.find((asset) =>
+		asset.name.endsWith(patterns.get(options.platform) as SetupOptions["platform"]),
+	);
 
-    if (!asset) {
-        throw new Error(
-            `Could not find a SOPS release for ${options.platform} for the given version.`
-        );
-    }
+	if (!asset) {
+		throw new Error(`Could not find a SOPS release for ${options.platform} for the given version.`);
+	}
 
-    return asset.browser_download_url;
+	return asset.browser_download_url;
 };
 
 /**
  * Installs the downloaded SOPS binary
  */
 const install = async (executablePath: string, options: SetupOptions) => {
-    // Symlink the binary to sops
-    await symlink(executablePath, join(dirname(executablePath), 'sops'));
+	// Symlink the binary to sops
+	await symlink(executablePath, join(dirname(executablePath), "sops"));
 
-    // Make binary executable
-    await chmod(executablePath, 0o755);
-    await chmod(join(dirname(executablePath), 'sops'), 0o755);
+	// Make binary executable
+	await chmod(executablePath, 0o755);
+	await chmod(join(dirname(executablePath), "sops"), 0o755);
 
-    // Add the CLI binary to the PATH
-    addPath(dirname(executablePath));
+	// Add the CLI binary to the PATH
+	addPath(dirname(executablePath));
 };
