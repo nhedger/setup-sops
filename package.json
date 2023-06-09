@@ -6,9 +6,7 @@
     "build": "unbuild",
     "package": "ncc build build/index.mjs -o dist",
     "format": "rome format --write .",
-    "ci:format": "rome format .",
-    "lint": "rome check --apply-unsafe .",
-    "ci:lint": "rome check ."
+    "lint": "rome check --apply-unsafe ."
   },
   "keywords": [],
   "author": "",
