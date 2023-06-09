@@ -13240,18 +13240,18 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
 
-// EXTERNAL MODULE: external "path"
-var external_path_ = __nccwpck_require__(1017);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@octokit+rest@19.0.7/node_modules/@octokit/rest/dist-node/index.js
-var dist_node = __nccwpck_require__(9909);
-;// CONCATENATED MODULE: external "fs/promises"
-const promises_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("fs/promises");
-// EXTERNAL MODULE: ./node_modules/.pnpm/@octokit+request-error@3.0.3/node_modules/@octokit/request-error/dist-node/index.js
-var request_error_dist_node = __nccwpck_require__(5419);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@actions+core@1.10.0/node_modules/@actions/core/lib/core.js
 var core = __nccwpck_require__(7733);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@actions+tool-cache@2.0.1/node_modules/@actions/tool-cache/lib/tool-cache.js
 var tool_cache = __nccwpck_require__(514);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@octokit+request-error@3.0.3/node_modules/@octokit/request-error/dist-node/index.js
+var dist_node = __nccwpck_require__(5419);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@octokit+rest@19.0.7/node_modules/@octokit/rest/dist-node/index.js
+var rest_dist_node = __nccwpck_require__(9909);
+;// CONCATENATED MODULE: external "fs/promises"
+const promises_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("fs/promises");
+// EXTERNAL MODULE: external "path"
+var external_path_ = __nccwpck_require__(1017);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@octokit+auth-action@2.0.3/node_modules/@octokit/auth-action/dist-node/index.js
 var auth_action_dist_node = __nccwpck_require__(8485);
 ;// CONCATENATED MODULE: ./build/index.mjs
@@ -13266,7 +13266,7 @@ var auth_action_dist_node = __nccwpck_require__(8485);
 const defaultOptions = {
   version: "latest",
   platform: process.platform,
-  octokit: new dist_node/* Octokit */.v()
+  octokit: new rest_dist_node/* Octokit */.v()
 };
 const setup = async (config) => {
   const options = { ...defaultOptions, ...config };
@@ -13274,8 +13274,10 @@ const setup = async (config) => {
     const executablePath = await download(options);
     await install(executablePath, options);
   } catch (error) {
-    console.log(error);
-    (0,core.setFailed)(error.message);
+    if (error instanceof Error) {
+      console.log(error.message);
+      (0,core.setFailed)(error.message);
+    }
   }
 };
 const download = async (options) => {
@@ -13284,7 +13286,7 @@ const download = async (options) => {
     const assetURL = await findAsset(releaseId, options);
     return await (0,tool_cache.downloadTool)(assetURL);
   } catch (error) {
-    if (error instanceof request_error_dist_node.RequestError) {
+    if (error instanceof dist_node.RequestError) {
       const requestError = error;
       if (requestError.status === 403 && requestError.response?.headers["x-ratelimit-remaining"] === "0") {
         throw new Error(`
@@ -13312,7 +13314,7 @@ const findRelease = async (options) => {
       tag: `v${options.version}`
     })).data.id;
   } catch (error) {
-    if (error instanceof request_error_dist_node.RequestError) {
+    if (error instanceof dist_node.RequestError) {
       const requestError = error;
       if (requestError.status === 404) {
         throw new Error(`Version ${options.version} of SOPS does not exist.`);
@@ -13352,7 +13354,7 @@ const install = async (executablePath, options) => {
   await setup({
     version: (0,core.getInput)("version"),
     platform: process.platform,
-    octokit: new dist_node/* Octokit */.v({
+    octokit: new rest_dist_node/* Octokit */.v({
       auth: (await (0,auth_action_dist_node/* createActionAuth */.C)()()).token
     })
   });
