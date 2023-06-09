@@ -39,4 +39,4 @@ jobs:
       run: npm install
 
     - name: Run Rome
-      run: npm run rome ci
+      run: npx rome ci
