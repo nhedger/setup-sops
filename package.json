@@ -1,7 +1,6 @@
 {
   "name": "setup-sops",
-  "version": "1.0.0",
-  "description": "",
+  "description": "Setup SOPS in GitHub Actions",
   "scripts": {
     "build": "unbuild",
     "prepackage": "npm run build",
@@ -10,10 +9,14 @@
     "lint": "rome check --apply-unsafe .",
     "postinstall": "lefthook install"
   },
-  "keywords": ["mozilla", "sops", "github-actions"],
+  "keywords": [
+    "mozilla",
+    "sops",
+    "github-action"
+  ],
   "author": {
-	  	"name": "Nicolas Hedger",
-		"email": "nicolas@hedger.ch"
+    "name": "Nicolas Hedger",
+    "email": "nicolas@hedger.ch"
   },
   "license": "MIT",
   "dependencies": {
