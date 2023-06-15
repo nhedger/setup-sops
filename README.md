@@ -1,10 +1,8 @@
-![Banner](.github/banner.svg)
+# Setup SOPS in GitHub Actions
 
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/nhedger/setup-sops?label=latest&logo=github)](https://github.com/marketplace/actions/setup-sops)
 [![Test](https://github.com/nhedger/setup-sops/actions/workflows/test.yaml/badge.svg)](https://github.com/nhedger/setup-sops/actions/workflows/test.yaml)
 [![Integrate](https://github.com/nhedger/setup-sops/actions/workflows/integrate.yaml/badge.svg)](https://github.com/nhedger/setup-sops/actions/workflows/integrate.yaml)
-
-# Setup SOPS in GitHub Actions
 
 **Setup SOPS** is a GitHub action that provides a cross-platform interface
 for setting up [SOPS](https://github.com/mozilla/sops) in GitHub
