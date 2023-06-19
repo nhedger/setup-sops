@@ -8,8 +8,8 @@ dependencies:
     specifier: ^2.0.1
     version: 2.0.1
   '@octokit/auth-action':
-    specifier: ^2.0.3
-    version: 2.0.3
+    specifier: ^3.0.2
+    version: 3.0.2
   '@octokit/request-error':
     specifier: ^4.0.1
     version: 4.0.1
@@ -544,17 +544,22 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@octokit/auth-action@2.0.3:
-    resolution: {integrity: sha512-GtUtNR7AmDV8bjNtt+EuqwE2Ipeq0aR10zPInp/B6msgoXL7UPqj2bI+8M/A/y7abGJ3U4h85wXoqZSralnDxw==}
-    engines: {node: '>= 14'}
+  /@octokit/auth-action@3.0.2:
+    resolution: {integrity: sha512-QkRAlAFqELFdzddFjDA68IN26pJ2hoTLY2vNYsmX5vwcYIWiiQA1KDFIrqpdzZo4dpPJXM9E0drXyBpZhicGTA==}
+    engines: {node: '>= 18'}
     dependencies:
-      '@octokit/auth-token': 3.0.4
-      '@octokit/types': 9.3.1
+      '@octokit/auth-token': 4.0.0
+      '@octokit/types': 10.0.0
     dev: false
 
   /@octokit/auth-token@3.0.4:
     resolution: {integrity: sha512-TWFX7cZF2LXoCvdmJWY7XVPi74aSY0+FfBZNSXEXFkMpjcqsQwDSYVv5FhRFaI0V1ECnwbz4j59T/G+rXNWaIQ==}
     engines: {node: '>= 14'}
+    dev: false
+
+  /@octokit/auth-token@4.0.0:
+    resolution: {integrity: sha512-tY/msAuJo6ARbK6SPIxZrPBms3xPbfwBrulZe0Wtr/DIY9lje2HeV1uoebShn6mx7SjCHif6EjMvoREj+gZ+SA==}
+    engines: {node: '>= 18'}
     dev: false
 
   /@octokit/core@4.2.1:
@@ -670,6 +675,12 @@ packages:
 
   /@octokit/tsconfig@1.0.2:
     resolution: {integrity: sha512-I0vDR0rdtP8p2lGMzvsJzbhdOWy405HcGovrspJ8RRibHnyRgggUSNO5AIox5LmqiwmatHKYsvj6VGFHkqS7lA==}
+    dev: false
+
+  /@octokit/types@10.0.0:
+    resolution: {integrity: sha512-Vm8IddVmhCgU1fxC1eyinpwqzXPEYu0NrYzD3YZjlGjyftdLBTeqNblRC0jmJmgxbJIsQlyogVeGnrNaaMVzIg==}
+    dependencies:
+      '@octokit/openapi-types': 18.0.0
     dev: false
 
   /@octokit/types@9.3.1:
