@@ -14,8 +14,8 @@ dependencies:
     specifier: ^4.0.1
     version: 4.0.1
   '@octokit/rest':
-    specifier: ^19.0.7
-    version: 19.0.7
+    specifier: ^19.0.13
+    version: 19.0.13
   ts-dedent:
     specifier: ^2.2.0
     version: 2.2.0
@@ -656,8 +656,8 @@ packages:
       - encoding
     dev: false
 
-  /@octokit/rest@19.0.7:
-    resolution: {integrity: sha512-HRtSfjrWmWVNp2uAkEpQnuGMJsu/+dBr47dRc5QVgsCbnIc1+GFEaoKBWkYG+zjrsHpSqcAElMio+n10c0b5JA==}
+  /@octokit/rest@19.0.13:
+    resolution: {integrity: sha512-/EzVox5V9gYGdbAI+ovYj3nXQT1TtTHRT+0eZPcuC05UFSWO3mdO9UY1C0i2eLF9Un1ONJkAk+IEtYGAC+TahA==}
     engines: {node: '>= 14'}
     dependencies:
       '@octokit/core': 4.2.1
