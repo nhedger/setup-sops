@@ -8,8 +8,8 @@ dependencies:
     specifier: ^2.0.1
     version: 2.0.1
   '@octokit/auth-action':
-    specifier: ^3.0.2
-    version: 3.0.2
+    specifier: ^4.0.0
+    version: 4.0.0
   '@octokit/request-error':
     specifier: ^4.0.2
     version: 4.0.2
@@ -544,12 +544,12 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@octokit/auth-action@3.0.2:
-    resolution: {integrity: sha512-QkRAlAFqELFdzddFjDA68IN26pJ2hoTLY2vNYsmX5vwcYIWiiQA1KDFIrqpdzZo4dpPJXM9E0drXyBpZhicGTA==}
+  /@octokit/auth-action@4.0.0:
+    resolution: {integrity: sha512-sMm9lWZdiX6e89YFaLrgE9EFs94k58BwIkvjOtozNWUqyTmsrnWFr/M5LolaRzZ7Kmb5FbhF9hi7FEeE274SoQ==}
     engines: {node: '>= 18'}
     dependencies:
       '@octokit/auth-token': 4.0.0
-      '@octokit/types': 10.0.0
+      '@octokit/types': 11.0.0
     dev: false
 
   /@octokit/auth-token@3.0.4:
@@ -681,6 +681,12 @@ packages:
     resolution: {integrity: sha512-Vm8IddVmhCgU1fxC1eyinpwqzXPEYu0NrYzD3YZjlGjyftdLBTeqNblRC0jmJmgxbJIsQlyogVeGnrNaaMVzIg==}
     dependencies:
       '@octokit/openapi-types': 18.0.0
+
+  /@octokit/types@11.0.0:
+    resolution: {integrity: sha512-h4iyfMpQUdub1itwTn6y7z2a3EtPuer1paKfsIbZErv0LBbZYGq6haiPUPJys/LetPqgcX3ft33O16XuS03Anw==}
+    dependencies:
+      '@octokit/openapi-types': 18.0.0
+    dev: false
 
   /@octokit/types@9.3.1:
     resolution: {integrity: sha512-zfJzyXLHC42sWcn2kS+oZ/DRvFZBYCCbfInZtwp1Uopl1qh6pRg4NSP/wFX1xCOpXvEkctiG1sxlSlkZmzvxdw==}
