@@ -22,7 +22,7 @@
   "dependencies": {
     "@actions/core": "^1.10.0",
     "@actions/tool-cache": "^2.0.1",
-    "@octokit/auth-action": "^3.0.2",
+    "@octokit/auth-action": "^4.0.0",
     "@octokit/request-error": "^5.0.0",
     "@octokit/rest": "^20.0.1",
     "ts-dedent": "^2.2.0"
