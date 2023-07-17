@@ -24,7 +24,7 @@
     "@actions/tool-cache": "^2.0.1",
     "@octokit/auth-action": "^3.0.2",
     "@octokit/request-error": "^4.0.2",
-    "@octokit/rest": "^19.0.13",
+    "@octokit/rest": "^20.0.1",
     "ts-dedent": "^2.2.0"
   },
   "devDependencies": {
