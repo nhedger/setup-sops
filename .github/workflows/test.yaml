@@ -17,7 +17,7 @@ jobs:
         version: [ "latest", "3.7.3" ]
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Setup Exoscale CLI
         uses: ./
         with:
