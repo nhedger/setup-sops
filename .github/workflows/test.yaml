@@ -18,7 +18,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Exoscale CLI
+      - name: Setup SOPS
         uses: ./
         with:
           version: ${{ matrix.version }}
