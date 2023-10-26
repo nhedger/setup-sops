@@ -14,7 +14,7 @@ The following inputs are supported.
 
 ```yaml
 - name: Setup SOPS
-  uses: nhedger/setup-sops@v1
+  uses: nhedger/setup-sops@v2
   with:
 
     # The version of SOPS to install.
@@ -36,7 +36,7 @@ Setup the latest version of SOPS.
 
 ```yaml
 - name: Setup SOPS
-  uses: nhedger/setup-sops@v1
+  uses: nhedger/setup-sops@v2
 
 - name: Run SOPS
   run: sops --version
@@ -48,7 +48,7 @@ Install version `3.7.3` of SOPS.
 
 ```yaml
 - name: Setup SOPS
-  uses: nhedger/setup-sops@v1
+  uses: nhedger/setup-sops@v2
   with:
     version: 3.7.3
 
