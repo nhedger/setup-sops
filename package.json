@@ -5,8 +5,8 @@
     "build": "unbuild",
     "prepackage": "npm run build",
     "package": "ncc build build/index.mjs -o dist",
-    "format": "rome format --write .",
-    "lint": "rome check --apply-unsafe .",
+    "format": "biome format --write .",
+    "lint": "biome check --apply-unsafe .",
     "postinstall": "lefthook install"
   },
   "keywords": [
@@ -28,12 +28,12 @@
     "ts-dedent": "^2.2.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.3.3",
     "@hedger/prettier-config": "^1.2.0",
     "@octokit/types": "^12.1.1",
     "@types/node": "^18.16.5",
     "@vercel/ncc": "^0.38.1",
     "lefthook": "^1.5.2",
-    "rome": "^12.1.3",
     "unbuild": "^2.0.0"
   },
   "packageManager": "pnpm@8.3.1"
