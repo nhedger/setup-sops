@@ -1,7 +1,7 @@
-import { setup } from "./setup";
 import { getInput } from "@actions/core";
 import { createActionAuth } from "@octokit/auth-action";
 import { Octokit } from "@octokit/rest";
+import { setup } from "./setup";
 
 (async () => {
 	await setup({

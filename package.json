@@ -7,6 +7,7 @@
     "package": "ncc build build/index.mjs -o dist",
     "format": "biome format --write .",
     "lint": "biome check --apply-unsafe .",
+    "check": "biome check . --apply-unsafe",
     "postinstall": "lefthook install"
   },
   "keywords": [

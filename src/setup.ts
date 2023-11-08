@@ -1,9 +1,9 @@
+import { dirname, join } from "path";
 import { addPath, setFailed } from "@actions/core";
 import { downloadTool } from "@actions/tool-cache";
 import { RequestError } from "@octokit/request-error";
 import { Octokit } from "@octokit/rest";
 import { chmod, symlink } from "fs/promises";
-import { dirname, join } from "path";
 
 /**
  * SOPS Setup Options
