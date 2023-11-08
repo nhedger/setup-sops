@@ -1,4 +1,5 @@
 pre-commit:
   commands:
     package:
+      glob: ./**/*.ts
       run: npm run package && git add dist/*
