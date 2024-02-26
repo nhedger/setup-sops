@@ -34,7 +34,7 @@
     "@octokit/types": "^12.5.0",
     "@types/node": "^18.19.2",
     "@vercel/ncc": "^0.38.1",
-    "lefthook": "^1.6.1",
+    "lefthook": "^1.6.2",
     "unbuild": "^2.0.0"
   },
   "packageManager": "pnpm@8.3.1"
