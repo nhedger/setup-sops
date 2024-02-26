@@ -31,7 +31,7 @@
   "devDependencies": {
     "@biomejs/biome": "^1.5.3",
     "@hedger/prettier-config": "^1.2.0",
-    "@octokit/types": "^12.5.0",
+    "@octokit/types": "^12.6.0",
     "@types/node": "^18.19.2",
     "@vercel/ncc": "^0.38.1",
     "lefthook": "^1.6.1",
