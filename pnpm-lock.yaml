@@ -28,8 +28,8 @@ devDependencies:
     specifier: ^1.2.0
     version: 1.2.0
   '@octokit/types':
-    specifier: ^12.6.0
-    version: 12.6.0
+    specifier: ^13.1.0
+    version: 13.1.0
   '@types/node':
     specifier: ^18.19.2
     version: 18.19.2
@@ -675,6 +675,11 @@ packages:
 
   /@octokit/openapi-types@20.0.0:
     resolution: {integrity: sha512-EtqRBEjp1dL/15V7WiX5LJMIxxkdiGJnabzYx5Apx4FkQIFgAfKumXeYAqqJCj1s+BMX4cPFIFC4OLCR6stlnA==}
+    dev: false
+
+  /@octokit/openapi-types@21.2.0:
+    resolution: {integrity: sha512-xx+Xd6I7rYvul/hgUDqv6TeGX0IOGnhSg9IOeYgd/uI7IAqUy6DE2B6Ipv2M4mWoxaMcWjIzgTIcv8pMO3F3vw==}
+    dev: true
 
   /@octokit/plugin-paginate-rest@9.1.5(@octokit/core@5.0.2):
     resolution: {integrity: sha512-WKTQXxK+bu49qzwv4qKbMMRXej1DU2gq017euWyKVudA6MldaSSQuxtz+vGbhxV4CjxpUxjZu6rM2wfc1FiWVg==}
@@ -718,7 +723,7 @@ packages:
     resolution: {integrity: sha512-EPeILOAEGqwmEG6g7dYlbvqkjJ5nWNcZvQpgeLEn1MieIcJ0xK0CJtvVcIMXqzIM8DOWzvI6zL5FQAwjTvk/Tg==}
     engines: {node: '>= 18'}
     dependencies:
-      '@octokit/types': 12.5.0
+      '@octokit/types': 12.6.0
     dev: false
 
   /@octokit/request@8.1.6:
@@ -745,6 +750,13 @@ packages:
     resolution: {integrity: sha512-1rhSOfRa6H9w4YwK0yrf5faDaDTb+yLyBUKOCV4xtCDB5VmIPqd/v9yr9o6SAzOAlRxMiRiCic6JVM1/kunVkw==}
     dependencies:
       '@octokit/openapi-types': 20.0.0
+    dev: false
+
+  /@octokit/types@13.1.0:
+    resolution: {integrity: sha512-nBwAFOYqVUUJ2AZFK4ZzESQptaAVqdTDKk8gE0Xr0o99WuPDSrhUC38x0F40xD9OUxXhOOuZKWNNVVLPSHQDvQ==}
+    dependencies:
+      '@octokit/openapi-types': 21.2.0
+    dev: true
 
   /@rollup/plugin-alias@5.1.0(rollup@3.29.4):
     resolution: {integrity: sha512-lpA3RZ9PdIG7qqhEfv79tBffNaoDuukFDrmhLqg9ifv99u/ehn+lOg30x2zmhf8AQqQUZaMk/B9fZraQ6/acDQ==}
