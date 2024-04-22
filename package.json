@@ -27,7 +27,7 @@
 		"@biomejs/biome": "^1.6.4",
 		"@hedger/prettier-config": "^1.2.0",
 		"@octokit/auth-action": "^5.1.0",
-		"@octokit/types": "^13.4.0",
+		"@octokit/types": "^13.4.1",
 		"@types/node": "^18.19.31",
 		"@vercel/ncc": "^0.38.1",
 		"lefthook": "^1.6.10",
