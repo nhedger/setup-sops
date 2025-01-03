@@ -80,7 +80,7 @@ const findRelease = async (options: SetupOptions) => {
 		if (options.version === "latest") {
 			return (
 				await options.octokit.repos.getLatestRelease({
-					owner: "mozilla",
+					owner: "getsops",
 					repo: "sops",
 				})
 			).data.id;
@@ -88,7 +88,7 @@ const findRelease = async (options: SetupOptions) => {
 
 		return (
 			await options.octokit.repos.getReleaseByTag({
-				owner: "mozilla",
+				owner: "getsops",
 				repo: "sops",
 				tag: `v${options.version}`,
 			})
@@ -110,7 +110,7 @@ const findRelease = async (options: SetupOptions) => {
  */
 const findAsset = async (releaseId: number, options: SetupOptions) => {
 	const assets = await options.octokit.repos.listReleaseAssets({
-		owner: "mozilla",
+		owner: "getsops",
 		repo: "sops",
 		release_id: releaseId,
 	});

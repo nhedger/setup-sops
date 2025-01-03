@@ -5,7 +5,7 @@
 [![Integrate](https://github.com/nhedger/setup-sops/actions/workflows/integrate.yaml/badge.svg)](https://github.com/nhedger/setup-sops/actions/workflows/integrate.yaml)
 
 **Setup SOPS** is a GitHub action that provides a cross-platform interface
-for setting up [SOPS](https://github.com/mozilla/sops) in GitHub
+for setting up [SOPS](https://github.com/getsops/sops) in GitHub
 Actions runners.
 
 ## Inputs
