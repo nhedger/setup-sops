@@ -10,11 +10,7 @@
 		"check": "biome check . --apply-unsafe",
 		"postinstall": "lefthook install"
 	},
-	"keywords": [
-		"getsops",
-		"sops",
-		"github-action"
-	],
+	"keywords": ["getsops", "sops", "github-action"],
 	"author": {
 		"name": "Nicolas Hedger",
 		"email": "nicolas@hedger.ch"
