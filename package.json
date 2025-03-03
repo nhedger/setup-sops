@@ -30,7 +30,7 @@
 		"@octokit/types": "^13.8.0",
 		"@types/node": "^18.19.31",
 		"@vercel/ncc": "^0.38.1",
-		"lefthook": "^1.6.10",
+		"lefthook": "^1.11.2",
 		"unbuild": "^2.0.0"
 	},
 	"packageManager": "pnpm@8.3.1"
