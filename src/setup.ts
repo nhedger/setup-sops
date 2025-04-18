@@ -20,6 +20,11 @@ export interface SetupOptions {
 	platform: "linux" | "darwin" | "win32";
 
 	/**
+	 * Architecture
+	 */
+	arch?: "x64" | "arm64";
+
+	/**
 	 * Octokit instance to use for API calls
 	 */
 	octokit: Octokit;
@@ -28,6 +33,7 @@ export interface SetupOptions {
 const defaultOptions: SetupOptions = {
 	version: "latest",
 	platform: process.platform as "linux" | "darwin" | "win32",
+	arch: process.arch as "x64" | "arm64",
 	octokit: new Octokit(),
 };
 
@@ -116,17 +122,20 @@ const findAsset = async (releaseId: number, options: SetupOptions) => {
 	});
 
 	const patterns: Map<string, string> = new Map([
-		["linux", ".linux.amd64"],
-		["darwin", ".darwin"],
-		["win32", ".exe"],
+		["linux.x64", ".linux.amd64"],
+		["linux.arm64", ".linux.arm64"],
+		["darwin.x64", ".darwin.amd64"],
+		["darwin.arm64", ".darwin.arm64"],
+		["win32.x64", ".amd64.exe"],
+		["win32.arm64", ".arm64.exe"],
 	]);
 
 	const asset = assets.data.find((asset) =>
-		asset.name.endsWith(patterns.get(options.platform) as SetupOptions["platform"]),
+		asset.name.endsWith(patterns.get(`${options.platform}.${options.arch}`) as string),
 	);
 
 	if (!asset) {
-		throw new Error(`Could not find a SOPS release for ${options.platform} for the given version.`);
+		throw new Error(`Could not find a SOPS release for ${options.platform}.${options.arch} for the given version.`);
 	}
 
 	return asset.browser_download_url;
