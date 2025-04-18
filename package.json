@@ -29,7 +29,7 @@
 		"@octokit/rest": "^21.1.0",
 		"@octokit/types": "^13.8.0",
 		"@types/node": "^18.19.31",
-		"@vercel/ncc": "^0.38.1",
+		"@vercel/ncc": "^0.38.3",
 		"lefthook": "^1.11.10",
 		"unbuild": "^2.0.0"
 	},
