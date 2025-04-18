@@ -34,8 +34,8 @@ devDependencies:
     specifier: ^18.19.31
     version: 18.19.31
   '@vercel/ncc':
-    specifier: ^0.38.1
-    version: 0.38.1
+    specifier: ^0.38.3
+    version: 0.38.3
   lefthook:
     specifier: ^1.11.10
     version: 1.11.10
@@ -856,8 +856,8 @@ packages:
     resolution: {integrity: sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==}
     dev: true
 
-  /@vercel/ncc@0.38.1:
-    resolution: {integrity: sha512-IBBb+iI2NLu4VQn3Vwldyi2QwaXt5+hTyh58ggAMoCGE6DJmPvwL3KPBWcJl1m9LYPChBLE980Jw+CS4Wokqxw==}
+  /@vercel/ncc@0.38.3:
+    resolution: {integrity: sha512-rnK6hJBS6mwc+Bkab+PGPs9OiS0i/3kdTO+CkI8V0/VrW3vmz7O2Pxjw/owOlmo6PKEIxRSeZKv/kuL9itnpYA==}
     hasBin: true
     dev: true
 
