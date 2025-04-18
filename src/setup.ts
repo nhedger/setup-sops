@@ -122,11 +122,11 @@ const findAsset = async (releaseId: number, options: SetupOptions) => {
 	});
 
 	const patterns: Map<string, string> = new Map([
-		["linux.amd64", ".linux.amd64"],
+		["linux.x64", ".linux.amd64"],
 		["linux.arm64", ".linux.arm64"],
-		["darwin.amd64", ".darwin.amd64"],
+		["darwin.x64", ".darwin.amd64"],
 		["darwin.arm64", ".darwin.arm64"],
-		["win32.amd64", ".amd64.exe"],
+		["win32.x64", ".amd64.exe"],
 		["win32.arm64", ".arm64.exe"],
 	]);
 

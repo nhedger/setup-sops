@@ -34103,11 +34103,11 @@ const findAsset = async (releaseId, options) => {
     release_id: releaseId
   });
   const patterns = /* @__PURE__ */ new Map([
-    ["linux.amd64", ".linux.amd64"],
+    ["linux.x64", ".linux.amd64"],
     ["linux.arm64", ".linux.arm64"],
-    ["darwin.amd64", ".darwin.amd64"],
+    ["darwin.x64", ".darwin.amd64"],
     ["darwin.arm64", ".darwin.arm64"],
-    ["win32.amd64", ".amd64.exe"],
+    ["win32.x64", ".amd64.exe"],
     ["win32.arm64", ".arm64.exe"]
   ]);
   const asset = assets.data.find(
