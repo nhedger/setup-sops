@@ -24,7 +24,7 @@
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
 		"@hedger/prettier-config": "^1.2.0",
-		"@octokit/auth-action": "^5.1.1",
+		"@octokit/auth-action": "^5.1.2",
 		"@octokit/request-error": "^6.1.6",
 		"@octokit/rest": "^21.1.0",
 		"@octokit/types": "^13.8.0",
