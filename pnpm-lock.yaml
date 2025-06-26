@@ -22,8 +22,8 @@ devDependencies:
     specifier: ^5.1.1
     version: 5.1.1
   '@octokit/request-error':
-    specifier: ^6.1.6
-    version: 6.1.6
+    specifier: ^7.0.0
+    version: 7.0.0
   '@octokit/rest':
     specifier: ^22.0.0
     version: 22.0.0
@@ -505,13 +505,6 @@ packages:
     dependencies:
       '@octokit/core': 7.0.2
       '@octokit/types': 14.1.0
-    dev: true
-
-  /@octokit/request-error@6.1.6:
-    resolution: {integrity: sha512-pqnVKYo/at0NuOjinrgcQYpEbv4snvP3bKMRqHaD9kIsk9u1LCpb2smHZi8/qJfgeNqLo5hNW4Z7FezNdEo0xg==}
-    engines: {node: '>= 18'}
-    dependencies:
-      '@octokit/types': 13.10.0
     dev: true
 
   /@octokit/request-error@7.0.0:
