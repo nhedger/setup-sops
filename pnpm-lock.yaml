@@ -19,8 +19,8 @@ devDependencies:
     specifier: ^1.2.0
     version: 1.2.0
   '@octokit/auth-action':
-    specifier: ^5.1.1
-    version: 5.1.1
+    specifier: ^6.0.1
+    version: 6.0.1
   '@octokit/request-error':
     specifier: ^7.0.0
     version: 7.0.0
@@ -421,17 +421,12 @@ packages:
     resolution: {integrity: sha512-gv3ZRaISU3fjPAgNsriBRqGWQL6quFx04YMPW/zD8XMLsU32mhCCbfbO6KZFLjvYpCZ8zyDEgqsgf+PwPaM7GQ==}
     dev: true
 
-  /@octokit/auth-action@5.1.1:
-    resolution: {integrity: sha512-JE2gbAZcwwVuww88YY7oB97P6eVAPgKZk2US9Uyz+ZUw5ubeRkZqog7G/gUEAjayIFt8s0UX3qNntP1agVcB0g==}
-    engines: {node: '>= 18'}
+  /@octokit/auth-action@6.0.1:
+    resolution: {integrity: sha512-6gmX/skhJUfBiqGbRc5kNaCMIL32lUT7RrQMq/9PDHIhvYRLYHRYFJJapNqe7It5a8ug/fgNuwR8UiivsPmtHw==}
+    engines: {node: '>= 20'}
     dependencies:
-      '@octokit/auth-token': 5.1.0
-      '@octokit/types': 13.10.0
-    dev: true
-
-  /@octokit/auth-token@5.1.0:
-    resolution: {integrity: sha512-JH+5PhVMjpbBuKlykiseCHa2uZdEd8Qm/N9Kpqncx4o/wkGF38gqVjIP2gZqfaP3nxFZPpg0FwGClKzBi6nS2g==}
-    engines: {node: '>= 18'}
+      '@octokit/auth-token': 6.0.0
+      '@octokit/types': 14.1.0
     dev: true
 
   /@octokit/auth-token@6.0.0:
@@ -467,10 +462,6 @@ packages:
       '@octokit/request': 10.0.2
       '@octokit/types': 14.1.0
       universal-user-agent: 7.0.3
-    dev: true
-
-  /@octokit/openapi-types@24.2.0:
-    resolution: {integrity: sha512-9sIH3nSUttelJSXUrmGzl7QUBFul0/mB8HRYl3fOlgHbIWG+WnYDXU3v/2zMtAvuzZ/ed00Ei6on975FhBfzrg==}
     dev: true
 
   /@octokit/openapi-types@25.1.0:
@@ -532,12 +523,6 @@ packages:
       '@octokit/plugin-paginate-rest': 13.0.1(@octokit/core@7.0.2)
       '@octokit/plugin-request-log': 6.0.0(@octokit/core@7.0.2)
       '@octokit/plugin-rest-endpoint-methods': 16.0.0(@octokit/core@7.0.2)
-    dev: true
-
-  /@octokit/types@13.10.0:
-    resolution: {integrity: sha512-ifLaO34EbbPj0Xgro4G5lP5asESjwHracYJvVaPIyXMuiuXLlhic3S47cBdTb+jfODkTE5YtGCLt3Ay3+J97sA==}
-    dependencies:
-      '@octokit/openapi-types': 24.2.0
     dev: true
 
   /@octokit/types@14.1.0:
