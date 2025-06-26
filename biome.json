@@ -1,14 +1,28 @@
 {
 	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
 	"files": {
-		"ignore": ["build", "dist", "node_modules"]
+		"includes": ["**", "!**/build", "!**/dist", "!**/node_modules"]
 	},
 	"formatter": {
 		"indentWidth": 4,
 		"indentStyle": "tab",
 		"lineWidth": 120
 	},
-	"organizeImports": {
-		"enabled": true
+	"assist": { "actions": { "source": { "organizeImports": "on" } } },
+	"linter": {
+		"rules": {
+			"style": {
+				"noParameterAssign": "error",
+				"useAsConstAssertion": "error",
+				"useDefaultParameterLast": "error",
+				"useEnumInitializers": "error",
+				"useSelfClosingElements": "error",
+				"useSingleVarDeclarator": "error",
+				"noUnusedTemplateLiteral": "error",
+				"useNumberNamespace": "error",
+				"noInferrableTypes": "error",
+				"noUselessElse": "error"
+			}
+		}
 	}
 }

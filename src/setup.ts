@@ -45,7 +45,7 @@ export const setup = async (config: Partial<SetupOptions>) => {
 		const executablePath = await download(options);
 
 		// Install SOPS
-		await install(executablePath, options);
+		await install(executablePath);
 	} catch (error: unknown) {
 		if (error instanceof Error) {
 			console.log(error.message);
@@ -144,7 +144,7 @@ const findAsset = async (releaseId: number, options: SetupOptions) => {
 /**
  * Installs the downloaded SOPS binary
  */
-const install = async (executablePath: string, options: SetupOptions) => {
+const install = async (executablePath: string) => {
 	// Symlink the binary to sops
 	await symlink(executablePath, join(dirname(executablePath), "sops"));
 

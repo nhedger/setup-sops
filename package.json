@@ -10,7 +10,11 @@
 		"check": "biome check . --apply-unsafe",
 		"postinstall": "lefthook install"
 	},
-	"keywords": ["getsops", "sops", "github-action"],
+	"keywords": [
+		"getsops",
+		"sops",
+		"github-action"
+	],
 	"author": {
 		"name": "Nicolas Hedger",
 		"email": "nicolas@hedger.ch"
@@ -22,7 +26,7 @@
 		"ts-dedent": "^2.2.0"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^1.9.4",
+		"@biomejs/biome": "^2.0.5",
 		"@hedger/prettier-config": "^1.2.0",
 		"@octokit/auth-action": "^5.1.1",
 		"@octokit/request-error": "^7.0.0",
