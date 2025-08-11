@@ -25,7 +25,7 @@ jobs:
         version: ["latest", "3.10.2"]
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Setup SOPS
         uses: ./
         with:
