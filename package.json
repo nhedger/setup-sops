@@ -31,7 +31,7 @@
 		"@octokit/auth-action": "^6.0.1",
 		"@octokit/request-error": "^7.0.0",
 		"@octokit/rest": "^22.0.0",
-		"@octokit/types": "^14.1.0",
+		"@octokit/types": "^15.0.1",
 		"@types/node": "^18.19.31",
 		"@vercel/ncc": "^0.38.3",
 		"lefthook": "^1.11.14",
