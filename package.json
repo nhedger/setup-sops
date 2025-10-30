@@ -26,8 +26,7 @@
 		"ts-dedent": "^2.2.0"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^2.0.5",
-		"@hedger/prettier-config": "^1.2.0",
+		"@biomejs/biome": "2.3.2",
 		"@octokit/auth-action": "^6.0.1",
 		"@octokit/request-error": "^7.0.0",
 		"@octokit/rest": "^22.0.0",
@@ -36,6 +35,5 @@
 		"@vercel/ncc": "^0.38.3",
 		"lefthook": "^1.11.14",
 		"unbuild": "^3.6.1"
-	},
-	"packageManager": "pnpm@8.3.1"
+	}
 }
