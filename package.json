@@ -3,7 +3,7 @@
 	"description": "Setup SOPS in GitHub Actions",
 	"scripts": {
 		"build": "unbuild",
-		"prepackage": "npm run build",
+		"prepackage": "bun run build",
 		"package": "ncc build build/index.mjs -o dist",
 		"format": "biome format --write .",
 		"lint": "biome check --apply-unsafe .",
