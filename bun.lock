@@ -1,5 +1,6 @@
 {
   "lockfileVersion": 1,
+  "configVersion": 0,
   "workspaces": {
     "": {
       "name": "setup-sops",
@@ -15,11 +16,11 @@
         "@octokit/rest": "22.0.0",
         "@octokit/types": "16.0.0",
         "@types/node": "24.9.2",
-        "@types/semver": "^7.7.1",
+        "@types/semver": "7.7.1",
         "@vercel/ncc": "0.38.4",
         "lefthook": "2.0.2",
         "renovate": "^43.76.4",
-        "semver": "^7.7.4",
+        "semver": "7.7.4",
         "unbuild": "3.6.1",
       },
     },
