@@ -26,14 +26,16 @@
 		"ts-dedent": "^2.2.0"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.3.2",
+		"@biomejs/biome": "2.4.7",
 		"@octokit/auth-action": "6.0.1",
 		"@octokit/request-error": "7.0.1",
 		"@octokit/rest": "22.0.0",
 		"@octokit/types": "16.0.0",
 		"@types/node": "24.9.2",
+		"@types/semver": "^7.7.1",
 		"@vercel/ncc": "0.38.4",
 		"lefthook": "2.0.2",
+		"semver": "^7.7.4",
 		"unbuild": "3.6.1"
 	}
 }
