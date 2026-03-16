@@ -1,3 +1,15 @@
 {
-	"extends": ["github>nhedger/renovate"]
+	"extends": ["github>nhedger/renovate"],
+	"packageRules": [
+		{
+			"matchDepNames": ["node"],
+			"allowedVersions": ">=24 <25"
+		},
+		{
+			"matchManagers": ["npm"],
+			"matchPackageNames": ["@types/node"],
+			"versioning": "node",
+			"allowedVersions": ">=24 <25"
+		}
+	]
 }

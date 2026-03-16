@@ -41,3 +41,12 @@ jobs:
 
       - name: Run Biome
         run: biome ci .
+
+  validate-renovate-config:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Validate Renovate config
+        run: npx -p renovate -- renovate-config-validator --strict .github/renovate.json
