@@ -48,5 +48,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install dependencies
+        run: bun install
+
       - name: Validate Renovate config
-        run: npx -p renovate -- renovate-config-validator --strict .github/renovate.json
+        run: bunx renovate-config-validator --strict .github/renovate.json
