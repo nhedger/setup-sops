@@ -26,7 +26,7 @@
 		"ts-dedent": "^2.2.0"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.4.7",
+		"@biomejs/biome": "2.4.11",
 		"@octokit/auth-action": "6.0.2",
 		"@octokit/request-error": "7.1.0",
 		"@octokit/rest": "22.0.1",
